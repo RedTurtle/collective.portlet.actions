@@ -63,7 +63,7 @@ class IActionsPortlet(IPortletDataProvider):
         description=_(u'help_default_icon',
                       default=u"What icon we should use for actions with no specific icons. A 16*16 pixels image."),
         required=False,
-        default='action_icon.gif')
+        default='++resource++action_icon.gif')
 
 
 class Assignment(base.Assignment):
@@ -78,9 +78,10 @@ class Assignment(base.Assignment):
     show_title = True
     category = u""
     show_icons = True
-    default_icon = 'action_icon.gif'
+    default_icon = '++resource++action_icon.gif'
 
-    def __init__(self, ptitle=u"", show_title=True, category=u"", show_icons=True, default_icon='action_icon.gif'):
+    def __init__(self, ptitle=u"", show_title=True, category=u"", show_icons=True,
+                 default_icon='++resource++action_icon.gif'):
         self.ptitle = ptitle
         self.show_title = show_title
         self.category = category
@@ -136,14 +137,15 @@ class Renderer(base.Renderer):
 
         # Finding method for icons
         if show_icons:
-            portal_actionicons = getToolByName(self.context, 'portal_actionicons')
             def render_icon(category, action, default):
                 if action.has_key('icon') and action['icon']:
                     # We have an icon *in* this action
                     return action['icon']
-                # Otherwise we look for an icon in portal_actionicons
+                # Otherwise we render the default icon
                 if category != 'object_buttons':
-                    return portal_actionicons.renderActionIcon(category, action['id'], default)
+                    portal_state = getMultiAdapter((aq_inner(self.context), self.request),
+                                                   name=u'plone_portal_state')
+                    return portal_state.portal().restrictedTraverse(default)
                 else:
                     # object_buttons
                     plone_utils = getToolByName(self.context, 'plone_utils')
