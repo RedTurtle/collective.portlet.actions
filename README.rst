@@ -16,7 +16,8 @@ provide different links to various users or in various contexts.
 Requirements
 ============
 
-collective.portlet.actions requires Plone 3.x or greater. It has been tested with Plone 3.2 and Plone 4.2. It should work with all versions in between and may or may not work with future Plone versions.
+collective.portlet.actions requires Plone 3.x or greater. It has been tested with Plone 3.2, Plone 4.2 and Plone 4.3.
+It should work with all versions in between and may or may not work with future Plone versions.
 
 Install
 =======
@@ -31,10 +32,6 @@ to add these lines in your zc.buildout config file: ::
   recipe = plone.recipe.zope2instance
   ...
   eggs =
-    ...
-    collective.portlet.actions
-    ...
-  zcml =
     ...
     collective.portlet.actions
 

@@ -3,7 +3,7 @@ import os
 
 setup(
     name='collective.portlet.actions',
-    version='1.2.3.dev0',
+    version='1.3.0.dev0',
     description="A portlet that provides the links of an action category",
     long_description=(open("README.rst").read().strip() + "\n\n" +
                       open(os.path.join("docs", "HISTORY.txt")).read().strip()),
@@ -14,6 +14,7 @@ setup(
     "Framework :: Plone :: 4.0",
     "Framework :: Plone :: 4.1",
     "Framework :: Plone :: 4.2",
+    "Framework :: Plone :: 4.3",
     "Programming Language :: Python",
     "Topic :: Software Development :: Libraries :: Python Modules",
     ],

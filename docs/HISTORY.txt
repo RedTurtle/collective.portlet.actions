@@ -2,11 +2,15 @@
 Changelog
 =========
 
-1.2.3 (unreleased)
+1.3.0 (unreleased)
 ==================
 
-- Nothing changed yet.
-
+- Do not use the deprecated ``portal_actionicons`` tool anymore
+  [keul]
+- Product's description can now be translated
+  [keul]
+- Updated italian traslation
+  [keul]
 
 1.2.2 (2012-10-19)
 ==================
