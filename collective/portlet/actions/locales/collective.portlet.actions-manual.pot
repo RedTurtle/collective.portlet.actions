@@ -15,3 +15,9 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.portlet.actions\n"
+
+msgid "Actions portlet"
+msgstr ""
+
+msgid "A portlet that provides links of an action category"
+msgstr ""
