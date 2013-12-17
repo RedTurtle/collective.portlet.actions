@@ -13,8 +13,8 @@
 
   <browser:resource
       name="action_icon.gif"
-	  file="action_icon.gif"
-	  />
+      file="action_icon.gif"
+      />
 
   <genericsetup:registerProfile
      name="default"
